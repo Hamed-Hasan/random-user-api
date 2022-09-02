@@ -1,0 +1,60 @@
+[
+    {
+      "_id": "1",
+      "gender": "male",
+      "name": "Trujillo Hooper",
+      "contact": "+1 (871) 438-2101",
+      "address": "522 Seigel Street, Oceola, Vermont, 8850",
+      "photoUrl": "http://placehold.it/32x32"
+    },
+    {
+      "_id": "2",
+      "gender": "male",
+      "name": "Mills Harding",
+      "contact": "+1 (814) 450-2394",
+      "address": "307 Alice Court, Snelling, Delaware, 7515",
+      "photoUrl": "http://placehold.it/32x32"
+    },
+    {
+      "_id": "3",
+      "gender": "male",
+      "name": "Adela Cox",
+      "contact": "+1 (995) 530-3516",
+      "address": "349 Prescott Place, Corriganville, Kentucky, 6148",
+      "photoUrl": "http://placehold.it/32x32"
+    },
+    {
+      "_id": "4",
+      "gender": "female",
+      "name": "Bryant Gilliam",
+      "contact": "+1 (984) 462-3624",
+      "address": "626 Schermerhorn Street, Cumminsville, American Samoa, 1832",
+      "photoUrl": "http://placehold.it/32x32"
+    },
+    {
+      "_id": "5",
+      "gender": "male",
+      "name": "Sheryl Fitzgerald",
+      "contact": "+1 (836) 426-2651",
+      "address": "189 Hooper Street, Hartsville/Hartley, South Dakota, 4699",
+      "photoUrl": "http://placehold.it/32x32"
+    },
+    {
+      "_id": "6",
+      "gender": "female",
+      "name": "Phyllis Green",
+      "contact": "+1 (889) 481-2509",
+      "address": "186 Engert Avenue, Freetown, District Of Columbia, 8635",
+      "photoUrl": "http://placehold.it/32x32"
+    },
+    {
+      "_id": "7",
+      "gender": "female",
+      "name": "Merrill Humphrey",
+      "contact": "+1 (804) 552-2131",
+      "address": "531 Schenck Street, Machias, Federated States Of Micronesia, 474",
+      "photoUrl": "http://placehold.it/32x32"
+    }
+  ]
+
+  
