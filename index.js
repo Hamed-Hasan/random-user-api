@@ -13,6 +13,7 @@ app.use(express.json());
 // connect DB
 dbConnect()
 
+// all user
 app.use("/api/user", userRoute)
 
 app.get('/', (req, res) => {
