@@ -7,11 +7,17 @@ module.exports.getARandomUser = (req, res, next) => {
     // const randIndex = Math.floor(Math.random() * keys.length);
     // const randKey = keys[randIndex]
     // const result = loadUser([randKey])
-    const x= loadUser();
-    const y=x[Math.floor(Math.random()*x.length)]
-    res.send(y);
+    const user = loadUser();
+    const result = user[Math.floor(Math.random()*user.length)]
+    res.send(result);
 }
 
+
+// BONUS: Limit the number of users using query parameter(s)
+// http://localhost:5000/api/user/allUser
+// http://localhost:5000/api/user/allUser?limit=3
 module.exports.getAllUsers = (req, res, next) => {
-    res.json(loadUser())
+    const {limit} = req.query;
+    // console.log(limit);
+    res.json(loadUser().slice(0, limit));
 }
