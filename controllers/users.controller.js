@@ -43,3 +43,27 @@ module.exports.saveUser = (req, res, next) => {
   res.send(newData2)
 }
 
+module.exports.updateUser = (req, res) => {
+    // const newData = req.body;
+    const { id } = req.params;
+    // const filter = { _id: id };
+    const newData = loadUser().find(user => user._id === (id));
+    newData.id = id;
+    newData.name = req.body.name;
+    res.send(newData);
+  };
+  
+  module.exports.deleteUser = (req, res) => {
+    var data = fs.readFileSync("data.json");
+    var myArray = JSON.parse(data);
+    const { id } = req.params;
+    const result = myArray.filter((user => user._id != id))
+    const newData = JSON.stringify(result);
+    fs.writeFile('data.json', newData, (err,data) => {
+      if (err) {
+        throw err;
+      }else {
+        res.send(data);
+      }
+    })
+  };
