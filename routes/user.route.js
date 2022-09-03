@@ -21,7 +21,12 @@ router
 
 // update user api
 router
-.route("/updateUser/:id")
+.route("/updateUser/id:")
+.patch(usersController.updateUser)
+
+// update multiple user api
+router
+.route("/bulKUpdate")
 .patch(usersController.updateUser)
 
 // delete user api

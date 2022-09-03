@@ -44,15 +44,39 @@ module.exports.saveUser = (req, res, next) => {
 }
 
 module.exports.updateUser = (req, res) => {
-    // const newData = req.body;
+    var data = fs.readFileSync("data.json");
+    var myArray = JSON.parse(data);
     const { id } = req.params;
-    // const filter = { _id: id };
-    const newData = loadUser().find(user => user._id === (id));
-    newData.id = id;
-    newData.name = req.body.name;
-    res.send(newData);
+    const result = myArray.find((user => user._id == id))
+    const newObj = { 
+      ...result,
+      ...req.body
+    }
+    const newData = JSON.stringify(newObj);
+    fs.writeFile('data.json', newData, (err,data) => {
+      if (err) {
+        throw err;
+      }else {
+        res.send(data);
+      }
+    })
   };
   
+  module.exports.bulkUpdate = (req, res) => {
+    var data = fs.readFileSync("data.json");
+    // var myArray = JSON.parse(data);
+    // const { id } = req.params;
+    const result = data.forEach((user => user._id == typeof String || Number))
+    // const newData = JSON.stringify(result);
+    fs.writeFile('data.json', result, (err,data) => {
+      if (err) {
+        throw err;
+      }else {
+        res.send(data);
+      }
+    })
+  }
+
   module.exports.deleteUser = (req, res) => {
     var data = fs.readFileSync("data.json");
     var myArray = JSON.parse(data);
