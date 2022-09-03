@@ -1,6 +1,10 @@
 const { loadUser } = require("../model/userModel");
-
-
+var fs = require('fs');
+let tools = [
+  { id: 1, name: "Hammer" },
+  { id: 2, name: "Hammer2" },
+  { id: 3, name: "Hammer3" },
+];
 module.exports.getARandomUser = (req, res, next) => {
     // another way
       // const keys = Object.keys(loadUser())
@@ -21,3 +25,21 @@ module.exports.getAllUsers = (req, res, next) => {
     // console.log(limit);
     res.json(loadUser().slice(0, limit));
 }
+
+module.exports.saveUser = (req, res, next) => {
+
+  var data = fs.readFileSync("data.json");
+  var myObject = JSON.parse(data);
+  let newData = {
+    ...req.body,
+  };
+  myObject.push(newData);
+  var newData2 = JSON.stringify(myObject);
+  fs.writeFile("data.json", newData2, (err) => {
+    // Error checking
+    if (err) throw err;
+    console.log("New data added");
+  });
+  res.send(newData2)
+}
+

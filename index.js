@@ -17,7 +17,7 @@ dbConnect()
 app.use("/api/user", userRoute)
 
 app.get('/', (req, res) => {
-  
+  console.log('hello world');
 })
 
 app.all("*", (req, res) => {
